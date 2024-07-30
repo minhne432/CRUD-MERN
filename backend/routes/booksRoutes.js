@@ -37,4 +37,25 @@ router.get("/getBook/:id", async (req, res) => {
   }
 });
 
+//UPDATE BOOK BY ID
+router.put("/updateBook/:id", async (req, res) => {
+  const id = req.params.id;
+  const { bookName, description, author, image, price } = req.body;
+  try {
+    book = await bookModel.findByIdAndUpdate(id, {
+      bookName,
+      description,
+      author,
+      image,
+      price,
+    });
+
+    await book.save().then(() => {
+      res.json({ message: "Data updated" });
+    });
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 module.exports = router;
