@@ -14,4 +14,27 @@ router.post("/add", async (req, res) => {
   }
 });
 
+//GET REQUEST
+router.get("/getBooks", async (req, res) => {
+  let books;
+  try {
+    let books = await bookModel.find();
+    res.status(200).json({ books });
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+//GET REQUEST WITH ID
+router.get("/getBook/:id", async (req, res) => {
+  let book;
+  const id = req.params.id;
+  try {
+    book = await bookModel.findById(id);
+    res.status(200).json({ book });
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 module.exports = router;
