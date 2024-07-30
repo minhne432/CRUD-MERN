@@ -58,4 +58,16 @@ router.put("/updateBook/:id", async (req, res) => {
   }
 });
 
+//DELETE BOOK BY ID
+router.delete("/deleteBook/:id", async (req, res) => {
+  const id = req.params.id;
+
+  try {
+    await bookModel.findByIdAndDelete(id).then(() => {
+      res.status(201).json({ message: "DELETE SUCCESSFULLY" });
+    });
+  } catch (error) {
+    console.log(error);
+  }
+});
 module.exports = router;
