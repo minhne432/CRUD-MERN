@@ -1,3 +1,13 @@
 .Home-page {
-  margin-top: 1px;
+  width: 100%;
+  min-height: 91.5vh;
+  max-height: auto;
+}
+
+.viewBook {
+  text-decoration: none;
+}
+
+.viewBook:hover {
+  color: white;
 }

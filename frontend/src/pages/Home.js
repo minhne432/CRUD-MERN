@@ -1,5 +1,6 @@
 import React from "react";
 import "./Home.css";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -9,8 +10,14 @@ const Home = () => {
           class="col-lg-6 d-flex justify-content-center align-items-start flex-column"
           style={{ height: "91.5vh" }}
         >
-          <h2 style={{ fontSize: "80px" }}>BOOK STORE FOR YOU</h2>
-          <button class="viewBook">View Books</button>
+          <h2 style={{ fontSize: "80px" }}>BOOK STORE</h2>
+          <h3 style={{ fontSize: "50px" }}>FOR YOU</h3>
+          <p style={{ color: "silver" }} class="mb-0">
+            Checkout The Books From Here
+          </p>
+          <Link to="/books" class="viewBook">
+            View Books
+          </Link>
         </div>
         <div
           class="col-lg-6 d-flex justify-content-center align-items-end flex-column"

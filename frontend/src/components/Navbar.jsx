@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <div>
-      <nav class="navbar navbar-expand-lg bg-dark text-white">
+      <nav class="navbar navbar-expand-lg bg-dark text-white mb-1">
         <div class="container-fluid">
           <a class="navbar-brand text-white" href="#">
             BookStore
@@ -21,31 +22,15 @@ const Navbar = () => {
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a
-                  class="nav-link active text-white"
-                  aria-current="page"
-                  href="#"
-                >
-                  HOME
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white" href="#">
-                  BOOKS
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link text-white" href="#">
-                  ADD BOOK
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white" href="#">
-                  EDIT BOOK
-                </a>
-              </li>
+              <Link class="nav-link active text-white" to="/">
+                Home
+              </Link>
+              <Link class="nav-link active text-white" to="/books">
+                Books
+              </Link>
+              <Link class="nav-link active text-white" to="/addBook">
+                Add book
+              </Link>
             </ul>
           </div>
         </div>
